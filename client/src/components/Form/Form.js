@@ -16,6 +16,7 @@ const Form = () => {
     const handleSubmit=(e)=>{
         e.preventDefault();
         dispatch(createPost(postData))
+        console.log(postData);
     }
 
     const clear=()=>{
@@ -31,7 +32,7 @@ const Form = () => {
             fullWidth
             value={postData.creator} 
             onChange={(e)=>setPostData({...postData, creator:e.target.value})}
-            />
+          />
 
             <TextField name="title"
             variant="outlined"

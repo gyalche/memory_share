@@ -4,8 +4,8 @@ import * as api from "../api/index.js";
 export const getPosts = ()=>async(dispatch)=>{
 
     try {
-        const {data}= await api.fetchPost();
-        dispatch({type: 'FETCH_ALL', payload: data});
+        const {data}= api.fetchPost();
+        dispatch({type:'FETCH_ALL', payload: data});
     } catch (error) {
         console.log(error.message)
     }
@@ -14,10 +14,10 @@ export const getPosts = ()=>async(dispatch)=>{
 
 export const createPost=(post)=>async(dispatch)=>{
     try {
-        const {data}= await api.createPost(post);
+        const {data}= api.createPost(post);
         dispatch({type:'CREATE', payload:data})
     } catch (error) {
-        console.log("unable to createPost")
+        console.log("unable to createPost");
     }
 }
 
